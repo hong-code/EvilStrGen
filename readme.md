@@ -1,1 +1,1 @@
-# EvilTextGen
+# EvilStrGen
