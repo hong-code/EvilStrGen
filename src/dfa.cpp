@@ -1838,9 +1838,8 @@ namespace re2 {
                         return true;
                     }
                 }
-                if (GetDFA(Prog::kFullMatch)->BFS_DFA_Cover(PathLength, std::move(regex), regex_id, ReDoS_file) == 1){
+                if (GetDFA(Prog::kFullMatch)->BFS_DFA_Cover(PathLength, regex, regex_id, ReDoS_file) == 1){
                     return true;
-
                 }
                 else{
                     bool Is_Out = false;

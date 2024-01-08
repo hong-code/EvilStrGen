@@ -8,7 +8,7 @@ aux_source_directory(. DIR_re2_clion)
 
 include_directories(${PROJECT_SOURCE_DIR}/util ${PROJECT_SOURCE_DIR})
 include_directories(${PROJECT_SOURCE_DIR}/src ${PROJECT_SOURCE_DIR})
-add_executable(EvilStrGen main.cpp
+add_executable(EvilStrGen EvilStrGen.cpp
         src/stringpiece.cpp
         util/util.h src/re2.cpp
         util/logging.h
