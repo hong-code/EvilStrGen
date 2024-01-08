@@ -1,0 +1,534 @@
+/filename\x3d[^\r\n]*(\x2e[^\x22\x27\r\n]{18,}[\x22\x27])
+in millisecond time:Time is 1410.7 ms
+in seconds time:1.4107 seconds
+Thourghput:7088.7B/s
+attack text length: 10000B
+
+/[^\x0a]{512}
+in millisecond time:Time is 15327.6 ms
+in seconds time:15.3276 seconds
+Thourghput:652.417B/s
+attack text length: 10000B
+
+/\x25USERPROFILE\x25\x5C[^\x2e]{1,255}\x2eexe
+in millisecond time:Time is 1298.48 ms
+in seconds time:1.29848 seconds
+Thourghput:7701.29B/s
+attack text length: 10000B
+
+/AgentGuid\x3D[^\x3f\x26\x0D\x0A]{63}.*?Source\x3D[^\x3f\x26\x0D\x0A]{50}
+in millisecond time:Time is 78.6098 ms
+in seconds time:0.0786098 seconds
+Thourghput:127211B/s
+attack text length: 10000B
+
+/instancename=[^&\x3b\r\n]{513}
+in millisecond time:Time is 790.223 ms
+in seconds time:0.790223 seconds
+Thourghput:12654.6B/s
+attack text length: 10000B
+
+/sel\x3d[^\x26\x0a]{73}
+in millisecond time:Time is 366.006 ms
+in seconds time:0.366006 seconds
+Thourghput:27322B/s
+attack text length: 10000B
+
+/\/[a-z0-9\x2f]{45}
+in millisecond time:Time is 219.314 ms
+in seconds time:0.219314 seconds
+Thourghput:45596.7B/s
+attack text length: 10000B
+
+/\d\d\.[^\s\n\r]{40}
+in millisecond time:Time is 249.901 ms
+in seconds time:0.249901 seconds
+Thourghput:40015.8B/s
+attack text length: 10000B
+
+/zip\x3a\x2f\x2f[^\x0A\x20\x09\x0B\x0C\x85\x3E\x3C]{400}
+in millisecond time:Time is 2218.52 ms
+in seconds time:2.21852 seconds
+Thourghput:4507.5B/s
+attack text length: 10000B
+
+/\x3cimg[^\x3e]*src\x3d(\x22|\x27)?[^\x22\x27\s]{300}
+in millisecond time:Time is 7300.1 ms
+in seconds time:7.3001 seconds
+Thourghput:1369.84B/s
+attack text length: 10000B
+
+/host\x3a\s*?[^\x0d\x0a]{64}[\x0d\x0a]
+in millisecond time:Time is 3266.17 ms
+in seconds time:3.26617 seconds
+Thourghput:3061.69B/s
+attack text length: 10000B
+
+/session=[^\s\x3b&]{520}
+in millisecond time:Time is 898.2 ms
+in seconds time:0.8982 seconds
+Thourghput:11133.4B/s
+attack text length: 10000B
+
+/JSESSIONID=[^\s\x26\x3a\x22\x27\x3b]{300}
+in millisecond time:Time is 1017.85 ms
+in seconds time:1.01785 seconds
+Thourghput:9824.59B/s
+attack text length: 10000B
+
+/[a-z\d\x2f\x2b\x3d]{100,300}
+in millisecond time:Time is 298.774 ms
+in seconds time:0.298774 seconds
+Thourghput:33470.1B/s
+attack text length: 10000B
+
+/MaxAge\x3D[^\x26\x3F\x3B\x0D\x0A]{300}
+in millisecond time:Time is 1287.36 ms
+in seconds time:1.28736 seconds
+Thourghput:7767.84B/s
+attack text length: 10000B
+
+/nim:import\?[^\x22\x27>\s]*?filename=[^\x22\x27>\s]{485}
+in millisecond time:Time is 307.436 ms
+in seconds time:0.307436 seconds
+Thourghput:32527.1B/s
+attack text length: 10000B
+
+/\sEXAMINE\s[^\n]{100}
+in millisecond time:Time is 126.207 ms
+in seconds time:0.126207 seconds
+Thourghput:79234.7B/s
+attack text length: 10000B
+
+/<input\s+[^>]*?name\s*=\s*(3D=)?[^\x20]{128}
+in millisecond time:Time is 117.749 ms
+in seconds time:0.117749 seconds
+Thourghput:84926.5B/s
+attack text length: 10000B
+
+/WebAdmin\x2Edll\x3F[^\r\n]*?View=Logon.*?\r\n\r\n[^\r\n\x26]*User=[^\r\n\x26]{100}
+in millisecond time:Time is 1602.26 ms
+in seconds time:1.60226 seconds
+Thourghput:6241.2B/s
+attack text length: 10000B
+
+/instancename=[^&\x3b\r\n]{513}
+in millisecond time:Time is 788.993 ms
+in seconds time:0.788993 seconds
+Thourghput:12674.4B/s
+attack text length: 10000B
+
+/Oid\x3D[^\x0D\x0A]{1000}
+in millisecond time:Time is 1179.8 ms
+in seconds time:1.1798 seconds
+Thourghput:8476.04B/s
+attack text length: 10000B
+
+/[^\x0d\x00\x0a]{509}
+in millisecond time:Time is 3217.52 ms
+in seconds time:3.21752 seconds
+Thourghput:3107.98B/s
+attack text length: 10000B
+
+/userid=[^\x26\r\n]{128}
+in millisecond time:Time is 493.925 ms
+in seconds time:0.493925 seconds
+Thourghput:20246B/s
+attack text length: 10000B
+
+/instancename=[^&\x3b\r\n]{513}
+in millisecond time:Time is 790.295 ms
+in seconds time:0.790295 seconds
+Thourghput:12653.5B/s
+attack text length: 10000B
+
+/MaxAge=[^\x26\x3F\x3B\x0D\x0A]{300}
+in millisecond time:Time is 1287.42 ms
+in seconds time:1.28742 seconds
+Thourghput:7767.46B/s
+attack text length: 10000B
+
+/IISWebAgentIF\.dll[^\n]*?Redirect[^\n]*?[?&]url=[^\n&]{256}
+in millisecond time:Time is 101.21 ms
+in seconds time:0.10121 seconds
+Thourghput:98804.7B/s
+attack text length: 10000B
+
+/Template\x3D[^\x0D\x0A]{1000}
+in millisecond time:Time is 855.015 ms
+in seconds time:0.855015 seconds
+Thourghput:11695.7B/s
+attack text length: 10000B
+
+/password=[^\x26\r\n]{128}
+in millisecond time:Time is 416.808 ms
+in seconds time:0.416808 seconds
+Thourghput:23991.9B/s
+attack text length: 10000B
+
+/cdda\x3A\x2F\x2F[^\s\x22\x27]{100}
+in millisecond time:Time is 522.774 ms
+in seconds time:0.522774 seconds
+Thourghput:19128.7B/s
+attack text length: 10000B
+
+/\x3cj2se[^\x3e]*java\x2dvm\x2dargs\s*\x3d\s*\x22[^\x22]*\x2dea\x3a[^\s\x22\x3e]{100}
+in millisecond time:Time is 2607.35 ms
+in seconds time:2.60735 seconds
+Thourghput:3835.31B/s
+attack text length: 10000B
+
+/(\r\nContent-Disposition\x3a\s+form-data\x3b[^\r\n]+\r\n\r\n.+?){250}
+in millisecond time:Time is 180.559 ms
+in seconds time:0.180559 seconds
+Thourghput:55383.5B/s
+attack text length: 10000B
+
+/pwd=(\!|\%21)CRYPT(\!|\%21)[^\r\n&]{513}
+in millisecond time:Time is 708.146 ms
+in seconds time:0.708146 seconds
+Thourghput:14121.4B/s
+attack text length: 10000B
+
+/CONNECT_OPTIONS\x3D[^\x20\x0A\x0D\x00]{900}
+in millisecond time:Time is 841.686 ms
+in seconds time:0.841686 seconds
+Thourghput:11880.9B/s
+attack text length: 10000B
+
+/<\w+\x3afill\s[^>]*method\s*=\s*(\x27[^\x27]{32}|\x22[^\x22]{32}|[^\s>]{32})
+in millisecond time:Time is 547.163 ms
+in seconds time:0.547163 seconds
+Thourghput:18276.1B/s
+attack text length: 10000B
+
+/connectID=[^&\x3b\r\n]{255}
+in millisecond time:Time is 784.191 ms
+in seconds time:0.784191 seconds
+Thourghput:12752B/s
+attack text length: 10000B
+
+/username=[^&\x3b\r\n]{255}
+in millisecond time:Time is 820.79 ms
+in seconds time:0.82079 seconds
+Thourghput:12183.4B/s
+attack text length: 10000B
+
+/IISWebAgent[^\r\n]*\x2edll\x3F[^\r\n]*?url\x3d[^\r\n]{257}
+in millisecond time:Time is 114.821 ms
+in seconds time:0.114821 seconds
+Thourghput:87092.2B/s
+attack text length: 10000B
+
+/[^\x0a]{512}
+in millisecond time:Time is 15300.5 ms
+in seconds time:15.3005 seconds
+Thourghput:653.575B/s
+attack text length: 10000B
+
+/sel\x3d[^\x26\x0a]{73}
+in millisecond time:Time is 365.672 ms
+in seconds time:0.365672 seconds
+Thourghput:27346.9B/s
+attack text length: 10000B
+
+/ICount\x3D\x2D[^\x26\x3F\x3B\x0D\x0A\s]{300}
+in millisecond time:Time is 1277.53 ms
+in seconds time:1.27753 seconds
+Thourghput:7827.59B/s
+attack text length: 10000B
+
+/Hostname\x3D[^\x26\x3F\x3B\x0D\x0A\s]{300}
+in millisecond time:Time is 1085.07 ms
+in seconds time:1.08507 seconds
+Thourghput:9216.01B/s
+attack text length: 10000B
+
+/smb\x3A\x2F\x2F[^\s\x0D\x0A\x3C]{251}
+in millisecond time:Time is 1541.22 ms
+in seconds time:1.54122 seconds
+Thourghput:6488.37B/s
+attack text length: 10000B
+
+/pitrig_dropmetadata\x28[^\x29]{520,}?
+in millisecond time:Time is 3055.75 ms
+in seconds time:3.05575 seconds
+Thourghput:3272.52B/s
+attack text length: 10000B
+
+/%[^\x0d\x0a]{1000}
+in millisecond time:Time is 5024.7 ms
+in seconds time:5.0247 seconds
+Thourghput:1990.17B/s
+attack text length: 10000B
+
+/php.*\x3f[^\n]{256}
+in millisecond time:Time is 14824.7 ms
+in seconds time:14.8247 seconds
+Thourghput:674.548B/s
+attack text length: 10000B
+
+/GET\s\x2f[^\r\n]{900}
+in millisecond time:Time is 1185.54 ms
+in seconds time:1.18554 seconds
+Thourghput:8435B/s
+attack text length: 10000B
+
+/https?\x3a\x2f\x2f[^\n\r]{1000}
+in millisecond time:Time is 2622.48 ms
+in seconds time:2.62248 seconds
+Thourghput:3813.18B/s
+attack text length: 10000B
+
+/AUTH\s[^\n]{100}
+in millisecond time:Time is 378.696 ms
+in seconds time:0.378696 seconds
+Thourghput:26406.4B/s
+attack text length: 10000B
+
+/ORGANIZER\x3amailto\x3a[^\r\n]{300}
+in millisecond time:Time is 470.039 ms
+in seconds time:0.470039 seconds
+Thourghput:21274.8B/s
+attack text length: 10000B
+
+/j_(username|password)=[^\n&]{256,}
+in millisecond time:Time is 288.374 ms
+in seconds time:0.288374 seconds
+Thourghput:34677.2B/s
+attack text length: 10000B
+
+/username=[^&\x3b\r\n]{250}
+in millisecond time:Time is 790.313 ms
+in seconds time:0.790313 seconds
+Thourghput:12653.2B/s
+attack text length: 10000B
+
+/fileName\x3d[^\r\n&]{235}
+in millisecond time:Time is 697.156 ms
+in seconds time:0.697156 seconds
+Thourghput:14344B/s
+attack text length: 10000B
+
+/<svg .{0,1000}transform\s*=\s*[\x22\x27][^\x22\x27]{500}
+in millisecond time:Time is 2719.28 ms
+in seconds time:2.71928 seconds
+Thourghput:3677.44B/s
+attack text length: 10000B
+
+/<a\s+[^>]*href=[^>]{500}
+in millisecond time:Time is 5533.55 ms
+in seconds time:5.53355 seconds
+Thourghput:1807.16B/s
+attack text length: 10000B
+
+/[a-z\d\x2f\x2b\x3d]{100}
+in millisecond time:Time is 181.29 ms
+in seconds time:0.18129 seconds
+Thourghput:55160.3B/s
+attack text length: 10000B
+
+/LCDWriteString\x28(\d+\x2c){7}[^\x29]{1000,}
+in millisecond time:Time is 2297.82 ms
+in seconds time:2.29782 seconds
+Thourghput:4351.95B/s
+attack text length: 10000B
+
+/[a-z\d\x2f\x2b\x3d]{100,300}
+in millisecond time:Time is 299.061 ms
+in seconds time:0.299061 seconds
+Thourghput:33438B/s
+attack text length: 10000B
+
+/file\x3A\x2F\x2F\x5C\x5C[^\s\x22\x27]{234}
+in millisecond time:Time is 938.152 ms
+in seconds time:0.938152 seconds
+Thourghput:10659.3B/s
+attack text length: 10000B
+
+/https?\x3a\x2f\x2f[^>\x22]{268}
+in millisecond time:Time is 942.625 ms
+in seconds time:0.942625 seconds
+Thourghput:10608.7B/s
+attack text length: 10000B
+
+/InformixServerList=([^\r\n\x3B]{,293}\x3B)*[^\r\n\x3B]{294}
+in millisecond time:Time is 376.333 ms
+in seconds time:0.376333 seconds
+Thourghput:26572.2B/s
+attack text length: 10000B
+
+/[a-z\d\x2f\x2b\x3d]{100}
+in millisecond time:Time is 181.468 ms
+in seconds time:0.181468 seconds
+Thourghput:55106B/s
+attack text length: 10000B
+
+/HostList=([^\r\n\x3B]{,296}\x3B)*[^\r\n\x3B]{297}
+in millisecond time:Time is 590.71 ms
+in seconds time:0.59071 seconds
+Thourghput:16928.8B/s
+attack text length: 10000B
+
+/smb\x3A\x2F\x2F[^\s\x0A\x0D\x3C]{251}
+in millisecond time:Time is 1544.26 ms
+in seconds time:1.54426 seconds
+Thourghput:6475.59B/s
+attack text length: 10000B
+
+/[^\x3E]*?text\s*\x3D\s*(\x27[^\x27]{500}|\x22[^\x22]{500}|\S{500})
+in millisecond time:Time is 239.359 ms
+in seconds time:0.239359 seconds
+Thourghput:41778.2B/s
+attack text length: 10000B
+
+/act\x3D[^\x26\x3F\x3B\x0D\x0A]{300}
+in millisecond time:Time is 1346.14 ms
+in seconds time:1.34614 seconds
+Thourghput:7428.67B/s
+attack text length: 10000B
+
+/w3who\.dll\x3F[^\r\n]{519}
+in millisecond time:Time is 665.081 ms
+in seconds time:0.665081 seconds
+Thourghput:15035.8B/s
+attack text length: 10000B
+
+/CreationDate[^\x29]{500}
+in millisecond time:Time is 307.173 ms
+in seconds time:0.307173 seconds
+Thourghput:32555B/s
+attack text length: 10000B
+
+/[^\n]{513}
+in millisecond time:Time is 15354.2 ms
+in seconds time:15.3542 seconds
+Thourghput:651.29B/s
+attack text length: 10000B
+
+/[?&]u=[^&\s]{35}
+in millisecond time:Time is 227.37 ms
+in seconds time:0.22737 seconds
+Thourghput:43981.1B/s
+attack text length: 10000B
+
+/ICount\x3D[^\x26\x3F\x3B\x0D\x0A\s]{300}
+in millisecond time:Time is 1426.03 ms
+in seconds time:1.42603 seconds
+Thourghput:7012.46B/s
+attack text length: 10000B
+
+/wqPassword=[^\r\n\x26]{294}
+in millisecond time:Time is 675.36 ms
+in seconds time:0.67536 seconds
+Thourghput:14806.9B/s
+attack text length: 10000B
+
+/\x3D[^\s\n]{88}
+in millisecond time:Time is 1169.4 ms
+in seconds time:1.1694 seconds
+Thourghput:8551.37B/s
+attack text length: 10000B
+
+/Host\x3A\s*[^\x0D\x0A]{121}
+in millisecond time:Time is 1930.01 ms
+in seconds time:1.93001 seconds
+Thourghput:5181.32B/s
+attack text length: 10000B
+
+/OvOSLocale\s*\x3d\s*[^\x3b\s]{249}
+in millisecond time:Time is 742.872 ms
+in seconds time:0.742872 seconds
+Thourghput:13461.3B/s
+attack text length: 10000B
+
+/HTTP_COOKIE=[^\x0a\x0d\x26\x3f\x20]{250}
+in millisecond time:Time is 701.631 ms
+in seconds time:0.701631 seconds
+Thourghput:14252.5B/s
+attack text length: 10000B
+
+/color\x3a\s*?[^\x7d]{62}
+in millisecond time:Time is 923.36 ms
+in seconds time:0.92336 seconds
+Thourghput:10830B/s
+attack text length: 10000B
+
+/C\x3a\x5c[^\x0d\x0a]{200}
+in millisecond time:Time is 1165.55 ms
+in seconds time:1.16555 seconds
+Thourghput:8579.62B/s
+attack text length: 10000B
+
+/[?&]p=[^&\s]{260}
+in millisecond time:Time is 1399.74 ms
+in seconds time:1.39974 seconds
+Thourghput:7144.21B/s
+attack text length: 10000B
+
+/%[^\x0d\x0a]{1000}
+in millisecond time:Time is 5031.3 ms
+in seconds time:5.0313 seconds
+Thourghput:1987.56B/s
+attack text length: 10000B
+
+/name=\s*[^\r\n\x3b\s\x2c]{300}
+in millisecond time:Time is 1258.68 ms
+in seconds time:1.25868 seconds
+Thourghput:7944.85B/s
+attack text length: 10000B
+
+/sid=[^&\x3b\r\n]{255}
+in millisecond time:Time is 1294.42 ms
+in seconds time:1.29442 seconds
+Thourghput:7725.46B/s
+attack text length: 10000B
+
+/contenttype=[^\r\n\x3b\x38]{100}
+in millisecond time:Time is 271.9 ms
+in seconds time:0.2719 seconds
+Thourghput:36778.3B/s
+attack text length: 10000B
+
+/X-Forwarded-For:[^\n\r]{90}
+in millisecond time:Time is 158.622 ms
+in seconds time:0.158622 seconds
+Thourghput:63042.9B/s
+attack text length: 10000B
+
+/wqPassword=[^\r\n\x26]{294}
+in millisecond time:Time is 675.124 ms
+in seconds time:0.675124 seconds
+Thourghput:14812.1B/s
+attack text length: 10000B
+
+/mfcisapicommand=[^&\r\n\x3b]{250}
+in millisecond time:Time is 561.794 ms
+in seconds time:0.561794 seconds
+Thourghput:17800.1B/s
+attack text length: 10000B
+
+/app\x3D[^\x26\x3F\x3B\x0D\x0A]{300}
+in millisecond time:Time is 1343.84 ms
+in seconds time:1.34384 seconds
+Thourghput:7441.37B/s
+attack text length: 10000B
+
+/sel\x3d[^\x26\x0a]{73}
+in millisecond time:Time is 365.806 ms
+in seconds time:0.365806 seconds
+Thourghput:27336.9B/s
+attack text length: 10000B
+
+/contenttype=[^\r\n\x3b\x38]{100}
+in millisecond time:Time is 272.447 ms
+in seconds time:0.272447 seconds
+Thourghput:36704.4B/s
+attack text length: 10000B
+
+/[^\x0a\x20]{165}
+in millisecond time:Time is 986.218 ms
+in seconds time:0.986218 seconds
+Thourghput:10139.7B/s
+attack text length: 10000B
+

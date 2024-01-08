@@ -1,0 +1,564 @@
+/PresetFields=[^\x26]*?(s_viewname|Foldername)\x3b\x28[^\x29]{100}/iU
+/OvAcceptLang\s*\x3d\s*[^\x3b\n]{300}/ismC
+/HTTP\/1\.[01].*?\n([^\r\n]+?\r?\n){32}/i
+/\sEXAMINE\s[^\n]{100}/smi
+/username=[^&\x3b\r\n]{255}/si
+/\(\s*((\x27[^\x27]{1000,})|(\x22[^\x22]{1000,}))|((\s*(\x27[^\x27]*'|\x22[^\x22]+\x22)\s*,)\s*((\x27[^\x27]{1000,})|(\x22[^\x22]{1000,})))/Rmsi
+/MaxAge=[^\x26\x3F\x3B\x0D\x0A]{300}/i
+/AgentGuid\x3D[^\x3f\x26\x0D\x0A]{63}.*?Source\x3D[^\x3f\x26\x0D\x0A]{50}/Hs
+/CreationDate[^\x29]{500}/
+/(((DestFile|encryptPass)\x3D[^\x26]{50})|((BaseDN|SearchFilter)\x3D[^\x26]{128}))/Ui
+/<IFRAME\s+[^>]*?src\s*=\s*(\x22|\x27|)[^\x22\x27\s>]{400}/smi
+/[^\x0d\x00\x0a]{509}/
+/\(\s*((\x27[^\x27]{1000,})|(\x22[^\x22]{1000,}))/Rmsi
+/(\r\nContent-Disposition\x3a\s+form-data\x3b[^\r\n]+\r\n\r\n.+?){250}/OPsmi
+/<figure[^>]+?dir\s*?=\s*?[\x22\x27]\s*?rtl\s*?[\x22\x27].*?(&#?x?[a-z\d]{2,4}\x3b){100}/si
+/([\xfc]).{0,50}([\x27])([\x20\x26\x3b\x7c]|[\x3c\x3e\x24]\x28)+/i
+/InName\x3E[^\x3C]{100}/i
+/\(\s*((\x27[^\x27]{1000,})|(\x22[^\x22]{1000,}))|((\s*(\x27[^\x27]*'|\x22[^\x22]+\x22)\s*,)\s*((\x27[^\x27]{1000,})|(\x22[^\x22 ]{1000,})))/Rmsi
+/\x5csecure\x5c[^\x00]{50}/smi
+/session=[^\s\x3b&]{520}/iC
+/\x5Csv\s+[^\x7D]*?\x3B[^\x7D]*?\x3B[^\x7B]{12}/smi
+/\sRENAME\s[^\n]{100}/smi
+/cdda\x3A\x2F\x2F[^\s\x22\x27]{100}/smi
+/%[^\x0d\x0a]{1000}/smiR
+/host\x3a\s*?[^\x0d\x0a]{64}[\x0d\x0a]/Hi
+/smb\x3A\x2F\x2F[^\s\x0D\x0A\x3C]{251}/mi
+/[^\x3a\s]{309}\sPRIVMSG/i
+/sel\x3d[^\x26\x0a]{73}/i
+/\((\s*(\x27[^\x27]*'|\x22[^\x22]+\x22)\s*,){2}\s*((\x27[^\x27]{1000,})|(\x22[^\x22]{1000,}))/Rsmi
+/CreationDate\x28[^\x3c\x29]{500}/
+/Location\x3A\s+[^\r\n]{600}/Hi
+/YMSG.{6}\x00\x4d.*?\x32\x37\xc0\x80(.{24,39}[\x2e\s])\.\w+\xc0\x80/i
+/\(\s*TIMESTAMP\s*(\s*(\x27[^\x27]+'|\x22[^\x22]+\x22)\s*,)\s*((\x27[^\x27]{1000,})|(\x22[^\x22]{1000,}))/Rmsi
+/instancename=[^&\x3b\r\n]{513}/Psmi
+/TO_CHAR\s*\(\s*SYSTIMESTAMP\s*,\s*(\x27[^\x27]{256}|\x22[^\x22]{256})/smi
+/\x0a\x0d?\x0a\x60\xea(.{36}[^\x00]{256}|.+\x60\xea.{32}[^\x00]{256})/s
+/[^\x00]{50}/R
+/for\s*\([^{]+document\.[^}]+inner(HTML|Text)\s*=.{0,300}textarea\s*\{.{0,50}display\x3A\s*ruby/smi
+/(\x22|\x27)itms\x3a\x2f\x2f[^\x22\x27]*\x3a[^\x22\x27\x2f]{256}/i
+/XDB\x2EXDB_PITRIG_PKG\x2EPITRIG_(DROP|TRUNCATE)\s*\x28[^\x29]*\x27[^\x27]{800}/smi
+/Hostname\x3D[^\x26\x3F\x3B\x0D\x0A\s]{300}/i
+/connectID=[^&\x3b\r\n]{255}/smi
+/\/CreationDate\x28[^\x3c\x29]{500}/
+/nim:import\?[^\x22\x27>\s]*?filename=[^\x22\x27>\s]{485}/i
+/\(\s*((\x27[^\x27]{1000,})|(\x22[^\x22]{1000,}))/Rmsi
+/AUTH\s[^\n]{100}/smi
+/pwd=(\!|\%21)CRYPT(\!|\%21)[^\r\n&]{513}/i
+/(data_select1|nameParams|schdParams|text1|schd_select1)=[^\x26]{512}/iU
+/Date\x3a\s+[^\x0d\x0a]{290}/i
+/sid=[^&\x3b\r\n]{255}/si
+/<iframe[^>]*?src[^>]*?name=[\x22\x27][^\x22\x27]{500}/smi
+/(OvAcceptLang|Accept-Language)\s*[\x3D\x3A]\s*[^\n]{69}/i
+/\sAP[A-Za-z]{4}\s[^\n]{256}/smi
+/FILECODE=[^&]{96}/iP
+/\x3C\s*applet[^\x3E\n$]*code\s*=\s*[\x27\x22]AppletX[\x22\x27][^\x3E\n$]*archive\s*=\s*[\x22\x27][^\s\x3E\n$]{32}\x2Ejar[\x22\x27]/i
+/\sLSUB\s[^\n]{100}/smi
+/[^\x3E]*?text\s*\x3D\s*(\x27[^\x27]{500}|\x22[^\x22]{500}|\S{500})/iR
+/FILECODE=[^&]{91}/iP
+/instancename=[^&\x3b\r\n]{513}/smi
+/\(\s*((\x27[^\x27]{1000,})|(\x22[^\x22]{1000,}))/Rmsi
+/\sSTATUS[^\n]{100}/smi
+/\stype\s*?=\s*?[\x22\x27]yaml[\x22\x27].{1,200}ruby\x2f(object|hash)/Pi
+/\x5Csv\s+[^\x7D]*?\x3B[^\x7D]*?\x3B[^\x7B]{12}/smi
+/\x3cimg[^\x3e]*src\x3d(\x22|\x27)?[^\x22\x27\s]{300}/i
+/(name|id|number|total|boundary)=\s*[^\r\n\x3b\s\x2c]{300}/smi
+/\/SoftCart\.exe\?[^\s]{100}/smi
+/[^\x0a]{512}/
+/classid=\s*[\x22\x27]\s*[A-Za-z\:\{-]{0,42}((\x26\x23\d{2,3}\x3B){2}[^\x22\x27]{0,35}){5}/i
+/contenttype=[^\r\n\x3b\x38]{100}/smi
+/RegExp?\x23.{0,5}\x28\x3f[^\x29]{0,4}i.*?\x28\x3f\x2d[^\x29]{0,4}i.{0,50}\x7c\x7c/smi
+/PUTOLF\s+((\S+\s+){4}[^\s]{256}|(\S+\s+){6}[^\x3c]{512})/i
+/[a-z\d\x2f\x2b\x3d]{100}/AGi
+/[^>]\w*\s*(on(mouse(over|up|down)|load|click)=([^\n\s>]|\(|\))*\s*){21}/Rmi
+/password=[^\x26\r\n]{128}/Psmi
+/isComponentInstalled\s*\([^,\)]{256}/smi
+/[^\x0a]{512}/
+/[^\x0d\x0a]{520}/smi
+/[^\x0a\x20]{165}/Ui
+/LCDWriteString\x28(\d+\x2c){7}[^\x29]{1000,}/siO
+/Template\x3D[^\x0D\x0A]{1000}/Pi
+/WebAdmin\x2Edll\x3F[^\r\n]*?View=Logon.*?\r\n\r\n[^\r\n\x26]*User=[^\r\n\x26]{100}/smi
+/\x5B(OPTIONS|WINDOWS|MERGE FILES|MAP|ALIAS|TEXT\x20POPUPS|INFOTYPES|SUBSETS)\x5D.*?(Contents|Index|Compiled|Sample List|Full text search stop list)\x20file\s*\x3D[^\r\n]{200}/smi
+/IISWebAgentIF\.dll[^\n]*?Redirect[^\n]*?[?&]url=[^\n&]{256}/Ui
+/\xff\xfa\x27\x01.{128,}\xff\xf0/Bsmi
+/(((DestFile|encryptPass)\x3D[^\x26]{50})|((BaseDN|SearchFilter)\x3D[^\x26]{128}))/Pi
+/\x3C\x21ENTITY\s+.*\s+\x22\x26[^\x22]{700}/sm
+/(?P<obj>[A-Z\d_]+)\.DataURL\s*=\s*(\x22[^\x22]{128}|\x27[^\x27]{128})/smi
+/\x2f[A-Za-z0-9\x2b\x2f\x3d]{1,10}\x2f[A-Za-z0-9\x2b\x2f\x3d]{1,10}\x2f[A-Za-z0-9\x2b\x2f\x3d]{1,10}\x2f([A-Za-z0-9\x2b\x2f\x3d]{1,10})?(\x2f[A-Za-z0-9\x2b\x2f\x3d]{1,10})?/U
+/embed src=\s*(\x27[^\x27]{1000}|\x22[^\x22]{1000}|[^\s\x22\x27]{1000})/smi
+/<\?(php)?.{1,256}define\s*\x28\s*str_repeat\s*\x28\s*[\x22\x27][^\x22\x27]+[\x22\x27]\s*\x2c\s*\x24argv/ims
+/userid=[^\x26\r\n]{128}/Psmi
+/\x18\x00.{32}[^\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0a\x0b\x0c\x0d\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18]/smiR
+/[?&]arg=[^-][^+&$]{189}/iP
+/IISWebAgent[^\r\n]*\x2edll\x3F[^\r\n]*?url\x3d[^\r\n]{257}/Ui
+/name=\s*[^\r\n\x3b\s\x2c]{300}/smi
+/^((22|33|35|36|44) \d+ [^\s\x00]{129})|((25|45) \d+ \d+ \d+ [^\s\x00]{129})|((46|47) \d+ \d+ [^\x0a]{129})|((61|62) [^\x0a]{129})/smi
+/\x00\x00.{30}\x01\x00{7}$/
+/<rect[^>]+transform\s*=\s*[\x22\x27][^\x22\x27]{500}/Osmi
+/([^\r\n]+?\r?\n){16}/H
+/(data_select1|nameParams|schdParams|text1|schd_select1)=[^\x26]{512}/i
+/[^>]\w*\s*(on(mouse(over|up|down)|load|click)=([^\n\s>]|\(|\))*\s*){21}/Rmi
+/\(((\s*(\x27[^\x27]*'|\x22[^\x22]+\x22)\s*,)\s*((\x27[^\x27]{1000,})|(\x22[^\x22]{1000,})))/Rmsi
+/\x3cbasefont.{0,250}(&#13|&#xd|0x0D|0x000D|0x0000000D|\x5cu000D).{0,5}\x3c\x2fbasefont/smi
+/\x25USERPROFILE\x25\x5C[^\x2e]{1,255}\x2eexe/
+/CreationDate[^\x29]{500}/
+/instancename=[^&\x3b\r\n]{513}/Usmi
+/file\=\/.{0,30}?conf.{0,30}?\.xml/P
+/wqPassword=[^\r\n\x26]{294}/i
+/act\x3D[^\x26\x3F\x3B\x0D\x0A]{300}/i
+/IDBKeyRange\x2e(only|lowerBound|upperBound|bound)\x28.*?\x29.{0,100}\x2e(lower|upper|lowerOpen|upperOpen)/smi
+/[^\x3e]{0,300}\x2fURI \x28data/i
+/[^\x00]{32}/R
+/rating\x2Dservice.{0,300}\x28\s*name\s*\x22[^\x22]{261}/smi
+/filename\x3d[^\r\n]*(\x2e[^\x22\x27\r\n]{18,}[\x22\x27])/Hsmi
+/Content-Type\x3A\s+audio\/(x-wav|mpeg|x-midi).*filename=[\x22\x27]?.{1,221}\.(vbs|exe|scr|pif|bat)/smi
+/(data_select1|nameParams|schdParams|text1|schd_select1)=[^\x26]{512}/iP
+/ALTER\s.*?FILE\s+((AS|MEMBER|TO)\s+)?(\x27[^\x27]{512}|\x22[^\x22]{512})/smi
+/zip\x3a\x2f\x2f[^\x0A\x20\x09\x0B\x0C\x85\x3E\x3C]{400}/i
+/\x0f\x00[\x04\x06]\x2B.{1,48}\x01\x00\x09\x2b/sm
+/wqPassword=[^\r\n\x26]{294}/i
+/sys\x2eolapimpl\x5ft\x2eodcitablestart\x28[^\x2c]+\x2c[^\x2c]+\x2c\s*\x27?[^\x2c\x27]{303}/i
+/ICount\x3D[^\x26\x3F\x3B\x0D\x0A\s]{300}/i
+/.{18}[\x01\x02\x03\x04\x05\x06]\x00\x00\x00.+?(\x2E{2}[\x5C\x2F]){2}/
+/Subject\x3a\x20[^\n]*\x3fQ\x3f[^\n]{512}/smi
+/X-Forwarded-For:[^\n\r]{90}/Hsmi
+/JSESSIONID=[^\s\x26\x3a\x22\x27\x3b]{300}/smi
+/userName\s*=([^\x5C\x26]{500}|[^5C]+\x5C[^\x26]{500})/i
+/[?&]arg=[^-][^+&$]{189}/iU
+/Host\x3a\s+[^\r\n]{500}/iH
+/<\w+\x3afill\s[^>]*method\s*=\s*(\x27[^\x27]{32}|\x22[^\x22]{32}|[^\s>]{32})/smi
+/CONNECT_OPTIONS\x3D[^\x20\x0A\x0D\x00]{900}/smi
+/CREATE\s.*?FILE\s+((AS|MEMBER|TO)\s+)?(\x27[^\x27]{512}|\x22[^\x22]{512})/smi
+/\d\d\.[^\s\n\r]{40}/Rsmi
+/[^>]\w*\s*(on(mouse(over|up|down)|load|click)=([^\n\s>]|\(|\))*\s*){21}/Rmi
+/\x3C[^\x3E]{88}/smiR
+in millisecond time:Time is 22115 ms
+in seconds time:22.115 seconds
+Thourghput:47469.6B/s
+attack text length: 1049790B
+
+/(\x3c[a-zA-Z\x5f][a-zA-Z0-9\x5f]*[^\x3e]*[^\x2f]\x3e){50,}/
+in millisecond time:Time is 28765.7 ms
+in seconds time:28.7657 seconds
+Thourghput:35391.4B/s
+attack text length: 1018060B
+
+/SET\s*EXPLAIN\s*FILE\s*TO\s*[\x22\x27][^\x22\x27]{927}/smi
+in millisecond time:Time is 319.308 ms
+in seconds time:0.319308 seconds
+Thourghput:3.14239e+06B/s
+attack text length: 1003392B
+
+/[?&]iprestrlist=[^&]{68}/iU
+in millisecond time:Time is 1145.38 ms
+in seconds time:1.14538 seconds
+Thourghput:887489B/s
+attack text length: 1016510B
+
+/\(\s*(\x27[^\x27]*'|\x22[^\x22]+\x22)\s*,(\s*(true|false)\s*,\s*){3}((\x27[^\x27]{1000,})|(\x22[^\x22]{1000,}))/Rmsi
+in millisecond time:Time is 1734.07 ms
+in seconds time:1.73407 seconds
+Thourghput:587009B/s
+attack text length: 1017912B
+
+/\((\s*(\x27[^\x27]*\x27|\x22[^\x22]+\x22)\s*,){2}\s*((\x27[^\x27]{1000,})|(\x22[^\x22]{1000,}))/Rsmi
+in millisecond time:Time is 2181.6 ms
+in seconds time:2.1816 seconds
+Thourghput:470657B/s
+attack text length: 1026786B
+
+/SSH-0*([2-9]\d*|1\d+)\.[^-]*-[^\n]*\n\x00\x00.{3}\x14.{1000}/s
+in millisecond time:Time is 395.638 ms
+in seconds time:0.395638 seconds
+Thourghput:2.54357e+06B/s
+attack text length: 1006333B
+
+/\sAPPEND\s[^\n]{256}/smi
+in millisecond time:Time is 14337.8 ms
+in seconds time:14.3378 seconds
+Thourghput:71251.4B/s
+attack text length: 1021592B
+
+/NUMTO(DS|YM)INTERVAL\s*\(\s*\d+\s*,\s*((\x27[^\x27]{1000,})|(\x22[^\x22]{1000,}))/msi
+in millisecond time:Time is 2391.28 ms
+in seconds time:2.39128 seconds
+Thourghput:423762B/s
+attack text length: 1013335B
+
+/\(\s*((\x27[^\x27]{1000,})|(\x22[^\x22]{1000,}))/Rmsi
+in millisecond time:Time is 1076.46 ms
+in seconds time:1.07646 seconds
+Thourghput:946931B/s
+attack text length: 1019333B
+
+/https?\x3a\x2f\x2f[^>\x22]{268}/smi
+in millisecond time:Time is 29437.1 ms
+in seconds time:29.4371 seconds
+Thourghput:34814B/s
+attack text length: 1024826B
+
+/<\x00(\w\x00)+\x3a\x00f\x00i\x00l\x00l\x00\s\x00([^>]\x00|>[^\x00])*m\x00e\x00t\x00h\x00o\x00d\x00(\s\x00)*=\x00(\s\x00)*(\x27\x00([^\x27]\x00|\x27[^\x00]){100}|\x22\x00([^\x22]\x00|\x22[^\x00]){100}|([^\s>]\x00|[\s>][^\x00]){100})/i
+in millisecond time:Time is 1282.55 ms
+in seconds time:1.28255 seconds
+Thourghput:791969B/s
+attack text length: 1015737B
+
+/%[^\x0d\x0a]{1000}/smiR
+in millisecond time:Time is 26838.6 ms
+in seconds time:26.8386 seconds
+Thourghput:39115B/s
+attack text length: 1049790B
+
+/Oid\x3D[^\x0D\x0A]{1000}/Pi
+in millisecond time:Time is 24245.3 ms
+in seconds time:24.2453 seconds
+Thourghput:42501.8B/s
+attack text length: 1030469B
+
+/\x2fnds\x2f[^&\r\n\x3b]{500}/smi
+in millisecond time:Time is 37556.1 ms
+in seconds time:37.5561 seconds
+Thourghput:27418B/s
+attack text length: 1029715B
+
+/\x2esetUserData\x28.{0,50}?\x7b[^\x7d]*?\x2eappendChild\x28/
+in millisecond time:Time is 2308.4 ms
+in seconds time:2.3084 seconds
+Thourghput:441012B/s
+attack text length: 1018030B
+
+/Host\x3A\s*[^\x0D\x0A]{121}/iH
+in millisecond time:Time is 43425 ms
+in seconds time:43.425 seconds
+Thourghput:23901.6B/s
+attack text length: 1037929B
+
+/https?\x3a\x2f\x2f[^\n\r]{1000}/Ri
+in millisecond time:Time is 31136.4 ms
+in seconds time:31.1364 seconds
+Thourghput:32914.1B/s
+attack text length: 1024826B
+
+/\(((\s*(\x27[^\x27]*'|\x22[^\x22]+\x22)\s*,){4}\s*((\x27[^\x27]{1000,})|(\x22[^\x22]{1000,})))/Rmsi
+in millisecond time:Time is 2324.56 ms
+in seconds time:2.32456 seconds
+Thourghput:441968B/s
+attack text length: 1027383B
+
+/\(\s*((\x27[^\x27]{1000,})|(\x22[^\x22]{1000,}))/Rmsi
+in millisecond time:Time is 1078.32 ms
+in seconds time:1.07832 seconds
+Thourghput:945295B/s
+attack text length: 1019333B
+
+/\sLOGIN\s[^\n]{100}/i
+in millisecond time:Time is 10617 ms
+in seconds time:10.617 seconds
+Thourghput:96377.5B/s
+attack text length: 1023240B
+
+/app\x3D[^\x26\x3F\x3B\x0D\x0A]{300}/i
+in millisecond time:Time is 34343 ms
+in seconds time:34.343 seconds
+Thourghput:30005.2B/s
+attack text length: 1030469B
+
+/\(\s*((\x27[^\x27]{1000,})|(\x22[^\x22]{1000,}))/Rmsi
+in millisecond time:Time is 1084.13 ms
+in seconds time:1.08413 seconds
+Thourghput:940234B/s
+attack text length: 1019333B
+
+/(\x22|\x27)itmss\x3a\x2f\x2f[^\x22\x27]*\x3a[^\x22\x27\x2f]{256}/i
+in millisecond time:Time is 4539.32 ms
+in seconds time:4.53932 seconds
+Thourghput:229600B/s
+attack text length: 1042229B
+
+/(\x40\x09.{19}|\x41\x0b.{23})[\xf0-\xff].{8}\x01\x00[\x00\x01\x02\x04\x08\x10\x18\x20]\x00/smi
+in millisecond time:Time is 9276.34 ms
+in seconds time:9.27634 seconds
+Thourghput:113501B/s
+attack text length: 1052869B
+
+/\(\s*((\x27[^\x27]{1000,})|(\x22[^\x22]{1000,}))/Rmsi
+in millisecond time:Time is 1087.18 ms
+in seconds time:1.08718 seconds
+Thourghput:937590B/s
+attack text length: 1019333B
+
+/get-dated-rev\s*\x28\s*([^\x29]{75}|[\s\x20-\x28\x2A-\x7E]{0,74}[^\s\x20-\x7E])/ims
+in millisecond time:Time is 26497.5 ms
+in seconds time:26.4975 seconds
+Thourghput:38684.2B/s
+attack text length: 1025035B
+
+/mfcisapicommand=[^&\r\n\x3b]{250}/smi
+in millisecond time:Time is 14514 ms
+in seconds time:14.514 seconds
+Thourghput:69897B/s
+attack text length: 1014483B
+
+/tree\x3d[^\x26]{256}/Ui
+in millisecond time:Time is 19084.8 ms
+in seconds time:19.0848 seconds
+Thourghput:53832B/s
+attack text length: 1027373B
+
+/txt_user_name_p\x3D[^\x26\x3F\x3B]{300}/Pi
+in millisecond time:Time is 14584.7 ms
+in seconds time:14.5847 seconds
+Thourghput:69558.1B/s
+attack text length: 1014483B
+
+/\x3C\S+\s+[^\x3E]*?(\x22[^\x22]{500}|\x27[^\x27]{500}|[^\x3E\x20\x09]{500})/O
+in millisecond time:Time is 12141.2 ms
+in seconds time:12.1412 seconds
+Thourghput:86919.3B/s
+attack text length: 1055305B
+
+/\s(APPEND|CHECK|CLOSE|CREATE|DELETE|EXAMINE|EXPUNGE|FETCH|LIST|RENAME|SEARCH|SELECT|STATUS|SUBSCRIBE|UNSUBSCRIBE)\s[^\n]{100}/smi
+in millisecond time:Time is 28753.3 ms
+in seconds time:28.7533 seconds
+Thourghput:35737.7B/s
+attack text length: 1027576B
+
+/\(\s*((\x27[^\x27]{1000,})|(\x22[^\x22]{1000,}))/Rmsi
+in millisecond time:Time is 1083.78 ms
+in seconds time:1.08378 seconds
+Thourghput:940539B/s
+attack text length: 1019333B
+
+/(\x40.{20}|\x41.{24})[\xf0-\xff].{8}\x01\x00[\x00\x01\x02\x04\x08\x10\x18\x20]\x00/smi
+in millisecond time:Time is 20082.8 ms
+in seconds time:20.0828 seconds
+Thourghput:53145.2B/s
+attack text length: 1067305B
+
+/\sSELECT\s[^\n]{100}/smi
+in millisecond time:Time is 10111.9 ms
+in seconds time:10.1119 seconds
+Thourghput:101029B/s
+attack text length: 1021592B
+
+/\(\s*((\x27[^\x27]{1000,})|(\x22[^\x22]{1000,}))/Rmsi
+in millisecond time:Time is 1082.12 ms
+in seconds time:1.08212 seconds
+Thourghput:941975B/s
+attack text length: 1019333B
+
+/[^\n]{513}/Rsi
+in millisecond time:Time is 29803.8 ms
+in seconds time:29.8038 seconds
+Thourghput:35890.1B/s
+attack text length: 1069663B
+
+/fileName\x3d[^\r\n&]{235}/iP
+in millisecond time:Time is 19234.3 ms
+in seconds time:19.2343 seconds
+Thourghput:53045.4B/s
+attack text length: 1020289B
+
+/\sCAPABILITY\s[^\n]{100}/smi
+in millisecond time:Time is 6666.87 ms
+in seconds time:6.66687 seconds
+Thourghput:152593B/s
+attack text length: 1017318B
+
+/OvOSLocale\s*\x3d\s*[^\x3b\s]{249}/Cmi
+in millisecond time:Time is 20700.8 ms
+in seconds time:20.7008 seconds
+Thourghput:49188.4B/s
+attack text length: 1018242B
+
+/\x20\x00([^\x00].|.[^\x00]){255}/Osmi
+in millisecond time:Time is 17884.8 ms
+in seconds time:17.8848 seconds
+Thourghput:58331.8B/s
+attack text length: 1043252B
+
+/[?&]HTTP_(COOKIE|SERVER)=[^&]{256}/iU
+in millisecond time:Time is 1230.39 ms
+in seconds time:1.23039 seconds
+Thourghput:826269B/s
+attack text length: 1016634B
+
+/w3who\.dll\x3F[^\r\n]{519}/i
+in millisecond time:Time is 20317 ms
+in seconds time:20.317 seconds
+Thourghput:50157.1B/s
+attack text length: 1019042B
+
+/(src|href)\s*=\s*(\x22|\x27|)file\x3a\x2f\x2f[^\s\x22\x27]{900}/smi
+in millisecond time:Time is 52857.5 ms
+in seconds time:52.8575 seconds
+Thourghput:19281.9B/s
+attack text length: 1019192B
+
+/HTTP_COOKIE=[^\x0a\x0d\x26\x3f\x20]{250}/smi
+in millisecond time:Time is 21499.6 ms
+in seconds time:21.4996 seconds
+Thourghput:47318B/s
+attack text length: 1017318B
+
+/href=.*?[\x22\x27][^\x22\x27]{500}/smi
+in millisecond time:Time is 215 ms
+in seconds time:0.215 seconds
+Thourghput:4.67513e+06B/s
+attack text length: 1005150B
+
+/User-Agent\x3a\x20[^\x0d\x0a]*?\x3bU\x3a[^\x0d\x0a]{1,68}\x3brv\x3a/H
+in millisecond time:Time is 21833.4 ms
+in seconds time:21.8334 seconds
+Thourghput:47091.4B/s
+attack text length: 1028164B
+
+/php.*\x3f[^\n]{256}/smi
+in millisecond time:Time is 47477.7 ms
+in seconds time:47.4777 seconds
+Thourghput:22241.1B/s
+attack text length: 1055954B
+
+/[a-z\d\x2f\x2b\x3d]{100,300}/i
+in millisecond time:Time is 7119.14 ms
+in seconds time:7.11914 seconds
+Thourghput:148783B/s
+attack text length: 1059207B
+
+/\((\s*((\x27[^\x27]{1000,})|(\x22[^\x22]{1000,}))|\s*(\x27[^\x27]*'|\x22[^\x22]+\x22)\s*,\s*(true|false)\s*,\s*((\x27[^\x27]{1000,})|(\x22[^\x22]{1000,})))/Rmsi
+in millisecond time:Time is 4214.47 ms
+in seconds time:4.21447 seconds
+Thourghput:244721B/s
+attack text length: 1031370B
+
+/<a\s+[^>]*href=[^>]{500}/smi
+in millisecond time:Time is 36570 ms
+in seconds time:36.57 seconds
+Thourghput:28107.6B/s
+attack text length: 1027894B
+
+/txt_user_name_p\x3D[^\x26\x3F\x3B]{300}/i
+in millisecond time:Time is 14790 ms
+in seconds time:14.79 seconds
+Thourghput:68592.7B/s
+attack text length: 1014483B
+
+/color\x3a\s*?[^\x7d]{62}/smi
+in millisecond time:Time is 27201.2 ms
+in seconds time:27.2012 seconds
+Thourghput:38045.7B/s
+attack text length: 1034890B
+
+/[a-z\d\x2f\x2b\x3d]{100}/AGPi
+in millisecond time:Time is 7089.82 ms
+in seconds time:7.08982 seconds
+Thourghput:149398B/s
+attack text length: 1059207B
+
+/Authorization\s*\x3A\s*Basic\s*[^\n]{437}/smi
+in millisecond time:Time is 41473.4 ms
+in seconds time:41.4734 seconds
+Thourghput:24570.8B/s
+attack text length: 1019036B
+
+/\sLIST\s[^\n]{100}/smi
+in millisecond time:Time is 12073.2 ms
+in seconds time:12.0732 seconds
+Thourghput:84902.9B/s
+attack text length: 1025048B
+
+/username=[^&\x3b\r\n]{250}/smi
+in millisecond time:Time is 21762.5 ms
+in seconds time:21.7625 seconds
+Thourghput:46882.8B/s
+attack text length: 1020289B
+
+/[^>]\w*\s*(on(mouse(over|up|down)|load|click)=([^\n\s>)]|\(|\))*\s*){21}/Rmi
+in millisecond time:Time is 49947.2 ms
+in seconds time:49.9472 seconds
+Thourghput:20348.6B/s
+attack text length: 1016354B
+
+/[?&]u=[^&\s]{35}/smi
+in millisecond time:Time is 3203.2 ms
+in seconds time:3.2032 seconds
+Thourghput:322980B/s
+attack text length: 1034572B
+
+/\x3d\s*null\s*\x3b[^\x7d]{0,50}\x3d\s*null\s*\x3b[^\x7d]{0,50}CollectGarbage\x28\x29/smi
+in millisecond time:Time is 28716.2 ms
+in seconds time:28.7162 seconds
+Thourghput:35889.5B/s
+attack text length: 1030612B
+
+/tree\x3d[^\x26]{256}/Pi
+in millisecond time:Time is 18790.2 ms
+in seconds time:18.7902 seconds
+Thourghput:54676.1B/s
+attack text length: 1027373B
+
+/\x22aim\x3Agoaway\x3Fmessage\x3D[^\x22]{500}|\x27aim\x3Agoaway\x3Fmessage\x3D[^\x27]{500}|aim\x3Agoaway\x3Fmessage\x3D[^\s]{500}/i
+in millisecond time:Time is 18198.9 ms
+in seconds time:18.1989 seconds
+Thourghput:55926.8B/s
+attack text length: 1017807B
+
+/[?&]p=[^&\s]{260}/smi
+in millisecond time:Time is 3226.67 ms
+in seconds time:3.22667 seconds
+Thourghput:320631B/s
+attack text length: 1034572B
+
+/\((\s*(\x27[^\x27]*'|\x22[^\x22]+\x22)\s*,){2}\s*((\x27[^\x27]{1000,})|(\x22[^\x22]{1000,}))/Rsmi
+/ICount\x3D\x2D[^\x26\x3F\x3B\x0D\x0A\s]{300}/i
+/filename=[\x22\x27]?.{1,221}\.(vbs|exe|scr|pif|bat)/Hi
+/\sAUTHENTICATE\s[^\n]{100}/smi
+/|00|<|00|I|00|F|00|R|00|A|00|M|00|E|00|[\s\x00]+[^>]*?s|00|r|00|c[\s\x00]*=[\s\x00]*(\x22|\x27)|00|f|00|i|00|l|00|e|00 3A 00 2f 00 2f 00|[^\x22\x27\s>]{400}/smi
+/null[^\x7d]{0,50}\.body\.innerHTML\s*?\x3d\s*?[\x22\x27]{2}[^\x7d]{0,50}CollectGarbage\x28\s*?\x29[^\x7d]{0,250}document\.write\x28\s*?[\x22\x27]{2}/smi
+/(\x22|\x27)daap\x3a\x2f\x2f[^\x22\x27]*\x3a[^\x22\x27\x2f]{256}/i
+/C\x3a\x5c[^\x0d\x0a]{200}/
+/.{20}[\x01\x02]\x00\x03\x00.*?\x5c\x00\x5c\x00/Rsm
+/\x3c\x21\x2d\x2d\x23include\s+file\s*=\s*.{250,}-->/smi
+/MaxAge\x3D[^\x26\x3F\x3B\x0D\x0A]{300}/i
+/j_(username|password)=[^\n&]{256,}/smi
+/propfind xmlns\x3A[^\x3D]*\x3d\x22[^\x22]{512}/smi
+/TIME_ZONE\s*=\s*((\x27[^\x27]{1000,})|(\x22[^\x22]{1000,}))/msi
+/<input\s+[^>]*?name\s*=\s*(3D=)?[^\x20]{128}/smi
+/<rt[^?]*?style\s*=\s*[\x22\x27]?-ms-hyphens\s*\x3A\s*auto\s*\x3B\s*[\x27\x22]?\>[\w\W]{680}/smi
+/pitrig_dropmetadata\x28[^\x29]{520,}?/i
+/sel\x3d[^\x26\x0a]{73}/Ui
+/sel\x3d[^\x26\x0a]{73}/Pi
+/(\x00.{15}(\xFF\xFF\xFF\xD9|.{5}\xFF\xFF\xFF\xD9)|\x01.{15}(\xD9\xFF\xFF\xFF|.{5}\xD9\xFF\xFF\xFF))/
+/\Wfrom=[^\x3b&\n]{100}/si
+/(=\s*([\x27\x22]rtsp\x3A[^\x22\x27\s]{200}|rstp\x3A[^\s\x3E]{200})|\x3Csrc\x3Ertsp\x3A[^\x3C]{200})/smi
+/file\x3A\x2F\x2F\x5C\x5C[^\s\x22\x27]{234}/smi
+/[?&]iprange=[^&]{68}/iU
+/\x28\x3f\x3d[^)]{300}/
+/\(\s*(\x27[^\x27]*'|\x22[^\x22]+\x22)\s*,\s*(true|false)\s*,\s*((\x27[^\x27]{1000,})|(\x22[^\x22]{1000,}))/Rmsi
+/(\x22|\x27)itpc\x3a\x2f\x2f[^\x22\x27]*\x3a[^\x22\x27\x2f]{256}/i
+/\/[a-z0-9\x2f]{45}/Ui
+/\x3D[^\s\n]{88}/si
+/\x2FCSuserCGI\x2Eexe\x3FLogout.[^\s]{96}/Ui
+/\(((\s*(\x27[^\x27]*'|\x22[^\x22]+\x22)\s*,)\s*((\x27[^\x27]{1000,})|(\x22[^\x22]{1000,})))/Rmsi
+/HostList=([^\r\n\x3B]{,296}\x3B)*[^\r\n\x3B]{297}/i
+/[^>]\w*\s*(on(mouse(over|up|down)|load|click)=([^\n\s>]|\(|\))*\s*){21}/Rmi
+/InformixServerList=([^\r\n\x3B]{,293}\x3B)*[^\r\n\x3B]{294}/i
+/xml(element|forest|concat|agg|pi|comment|root|serialize|parse|type)\s*\x28\s*\w+\s*\x27<[^>]{256}/smi
+/\sFETCH\s[^\n]{256}/smi
+/\x2fnds[^\r\n]{1000}/Usmi
+/CreationDate[^\x3c\x29]{500}/
+/GET\s\x2f[^\r\n]{900}/smi
+/\(\s*((\x27[^\x27]{1000,})|(\x22[^\x22]{1000,}))/Rmsi
+/.{4}\x00\x00\x00(\xF0|\xEF|\xE8|\xF5).{36}/smiR
+/USING\s*((\x27[^\x27]{1000})|(\x22[^\x22]{1000}))/Rmsi
+/(\x22|\x27)pcast\x3a\x2f\x2f[^\x22\x27]*\x3a[^\x22\x27\x2f]{256}/i
+/[a-z\d\x2f\x2b\x3d]{100,300}/Pi
+/ORGANIZER\x3amailto\x3a[^\r\n]{300}/i
+/\x3afill.*?method\s*=\s*[\x22\x27]\s*[^\x22\x27]{250}/smi
+/\x2FCSuserCGI\x2Eexe\x3F.*?Logout.[^&]{96}/Ui
+/\/OvCgi\/(jovgraph|webappmon)\.exe.*?-textFile+[^+]{201}/iU
+/smb\x3A\x2F\x2F[^\s\x0A\x0D\x3C]{251}/mi
+/<svg .{0,1000}transform\s*=\s*[\x22\x27][^\x22\x27]{500}/smi
+/\x3cj2se[^\x3e]*java\x2dvm\x2dargs\s*\x3d\s*\x22[^\x22]*\x2dea\x3a[^\s\x22\x3e]{100}/Osi
+/contenttype=[^\r\n\x3b\x38]{100}/smiU
