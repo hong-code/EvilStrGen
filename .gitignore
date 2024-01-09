@@ -2,3 +2,4 @@ cmake-build-debug
 Test
 .idea
 build
+.vscode
