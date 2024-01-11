@@ -841,7 +841,7 @@ int DFA::Hamilton_Deep_Search(int length, int restart_times, std::string regex, 
                 if (ns == DeadState) {
                     continue;
                 }
-                if (k.find(ns) == k.end() /*&& !ns->IsMatch()*/){
+                if (k.find(ns) == k.end() && !ns->IsMatch()){
                     float InstIDNum = count_InstIDNum_InState(ns, restart_times) / 100000;
                     for (int i = 0; i < ns->ninst_; i++){
                         Prog::Inst* ip = prog_->inst(ns->inst_[i]);
@@ -1214,7 +1214,7 @@ int DFA::BFS_DFA_Cover(int length, std::string regex, int regex_id, std::string 
             if (ns == DeadState) {
                 continue;
             }
-            if (m.find(ns) == m.end()) {
+            if (m.find(ns) == m.end() && !ns->IsMatch()) {
                 mem_counting += (ST_str->second.length() + 1);
                 is_inc = true;
                 srand(m.size());

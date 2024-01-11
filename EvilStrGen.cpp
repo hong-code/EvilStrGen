@@ -7,7 +7,7 @@ using namespace re2;
 
 //\w[s123456789qwertyuioasdfghjkzxcvbnASDFGHJQWERTYUZXCVBNMdacabcdcbmrtyw1248]
 int main(int argc, char *argv[]) {
-    if (argc != 5){
+    if (argc != 6){
         std::cout << "Usage: EvilStrGen [Regex] [OutputFile] [EngineType] [Attack String Length]" << std::endl;
         std::cout << "[Regex] is a file which contain a regex" << std::endl;
         std::cout << "[OutputFile] is a file where the candidate attack string will be write to" << std::endl;
@@ -33,11 +33,34 @@ int main(int argc, char *argv[]) {
         std::cout << "[Attack String Length] is MaxLength of candidate attack string" << std::endl;
         return 0;
     }
+    if (std::stoi(argv[5]) == 1){
+        int ID = 1;
+        int length = std::stoi(argv[4]);
+        std::ifstream in_regex(argv[1]);
+        std::string regex;
+        std::string InputDirectoryName(argv[2]);
+        while (std::getline(in_regex, regex))
+        {
+            std::string InputFileName = InputDirectoryName + "/" + std::to_string(ID) + ".txt";
+            regex = regex + '$';
+            re2::RE2 Regex = re2::RE2(regex);
+            re2::Prog* P = Regex.RetProg();
+            if (P == nullptr){
+                ID++;
+                continue;
+            }
+            std::cout << ID << std::endl;
+            P->EvilStrGen(Prog::kFullMatch, Prog::ALLSTRAT_ON, re2::Prog::RE2, length, regex, 1, 3, InputFileName);
+            ID++;
+        }
+        return 1;
+    }
     std::string regex;
     std::ifstream in_regex(argv[1]);
     std::getline(in_regex, regex);
     int length = std::stoi(argv[4]);
     int EngineID = std::stoi(argv[3]);
+    regex = regex + '$';
     re2::RE2 Regex = re2::RE2(regex);
     re2::Prog* P = Regex.RetProg();
     switch (EngineID) {

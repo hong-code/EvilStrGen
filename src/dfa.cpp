@@ -1830,33 +1830,34 @@ namespace re2 {
             case NonBacktracking:
             case grep:
             case awk:{
-                for (int i = 0; i < restart_times; i++){
-                    int upper_bound = 1;
-                    upper_bound++;
-                    if (GetDFA(Prog::kFullMatch)->Hamilton_Deep_Search(PathLength, upper_bound, regex, regex_id, ReDoS_file) == 1){
-                        std::cout << "generate successfully" << std::endl;
-                        return true;
-                    }
-                }
-                for (int i = 0; i < restart_times; i++){
-                    int upper_bound = 1;
-                    upper_bound++;
-                    std::string regex_Partial = ".*" + regex;
-                    re2::RE2 t = re2::RE2(regex_Partial);
-                        if (t.Ret_regex() == nullptr)
-                            continue;
-                        re2::Prog* P = t.RetProg();
-                        if (P == nullptr)
-                            continue;
-                    if (P->GetDFA(Prog::kFullMatch)->Hamilton_Deep_Search(PathLength, upper_bound, regex, regex_id, ReDoS_file) == 1){
-                        std::cout << "generate successfully" << std::endl;
-                        return true;
-                    }
-                }
                 if (GetDFA(Prog::kFullMatch)->BFS_DFA_Cover(PathLength, regex, regex_id, ReDoS_file) == 1){
+                    for (int i = 0; i < restart_times; i++){
+                        int upper_bound = 1;
+                        upper_bound++;
+                        if (GetDFA(Prog::kFullMatch)->Hamilton_Deep_Search(PathLength, upper_bound, regex, regex_id, ReDoS_file) == 1){
+                            std::cout << "generate successfully" << std::endl;
+                            return true;
+                        }
+                    }
+                    for (int i = 0; i < restart_times; i++){
+                        int upper_bound = 1;
+                        upper_bound++;
+                        std::string regex_Partial = ".+" + regex;
+                        re2::RE2 t = re2::RE2(regex_Partial);
+                            if (t.Ret_regex() == nullptr)
+                                continue;
+                            re2::Prog* P = t.RetProg();
+                            if (P == nullptr)
+                                continue;
+                        if (P->GetDFA(Prog::kFullMatch)->Hamilton_Deep_Search(PathLength, upper_bound, regex, regex_id, ReDoS_file) == 1){
+                            std::cout << "generate successfully" << std::endl;
+                            return true;
+                        }
+                    }
                     return true;
                 }
                 else{
+                    return false;
                     bool Is_Out = false;
                     std::string sub_str(ReDoS_file.begin(), ReDoS_file.end()-4);
                     vector<string> All_Regex;
