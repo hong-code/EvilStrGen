@@ -2,7 +2,7 @@ import os
 from concurrent.futures import ThreadPoolExecutor,as_completed
 import subprocess
 
-AttackString_directory = 'Out/'
+AttackString_directory = 'EvilStrGen_Ouput/'
 Regex_directory = 'EvilStrGen_Ouput/Regex/'
 Dataset_directory = 'regex_set/'
 
