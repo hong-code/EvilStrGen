@@ -1854,10 +1854,8 @@ namespace re2 {
                             return true;
                         }
                     }
-                    return true;
                 }
                 else{
-                    return false;
                     bool Is_Out = false;
                     std::string sub_str(ReDoS_file.begin(), ReDoS_file.end()-4);
                     vector<string> All_Regex;
