@@ -45,6 +45,8 @@
 #include <utility>
 #include <vector>
 #include "utf.h"
+#include "sys/types.h"
+#include "sys/stat.h"
 
 #include "src/dfa.h"
 #include "util/logging.h"
@@ -1839,31 +1841,19 @@ namespace re2 {
                             return true;
                         }
                     }
-                    for (int i = 0; i < restart_times; i++){
-                        int upper_bound = 1;
-                        upper_bound++;
-                        std::string regex_Partial = ".+" + regex;
-                        re2::RE2 t = re2::RE2(regex_Partial);
-                            if (t.Ret_regex() == nullptr)
-                                continue;
-                            re2::Prog* P = t.RetProg();
-                            if (P == nullptr)
-                                continue;
-                        if (P->GetDFA(Prog::kFullMatch)->Hamilton_Deep_Search(PathLength, upper_bound, regex, regex_id, ReDoS_file) == 1){
-                            std::cout << "generate successfully" << std::endl;
-                            return true;
-                        }
-                    }
                 }
                 else{
                     bool Is_Out = false;
-                    std::string sub_str(ReDoS_file.begin(), ReDoS_file.end()-4);
+//                    std::string sub_str(ReDoS_file.begin(), ReDoS_file.end()-4);
                     vector<string> All_Regex;
-                    All_Regex = Pretreatment(regex);
+                    All_Regex = Pretreatment(regex.substr(2, regex.length()-2));
                     int id = 0;
+                    if (mkdir(ReDoS_file.c_str(), 0777) == -1){
+                        return false;
+                    }
                     for (auto it : All_Regex){
                         id++;
-                        std::string OutFile = sub_str + "_" + to_string(id) + ".txt";
+                        std::string OutFile = ReDoS_file + '/' + to_string(id) + ".txt";
                         re2::RE2 t = re2::RE2(it);
                         if (t.Ret_regex() == nullptr)
                             continue;

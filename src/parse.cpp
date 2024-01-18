@@ -48,7 +48,7 @@
 namespace re2 {
 
 // Controls the maximum repeat count permitted by the parser.
-    static int maximum_repeat_count = 1000;
+    static int maximum_repeat_count = 100000;
 
     void Regexp::FUZZING_ONLY_set_maximum_repeat_count(int i) {
         maximum_repeat_count = i;

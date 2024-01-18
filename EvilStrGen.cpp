@@ -60,7 +60,7 @@ int main(int argc, char *argv[]) {
     std::getline(in_regex, regex);
     int length = std::stoi(argv[4]);
     int EngineID = std::stoi(argv[3]);
-    regex = regex + '$';
+    regex = ".*" + regex + '$';
     re2::RE2 Regex = re2::RE2(regex);
     re2::Prog* P = Regex.RetProg();
     switch (EngineID) {
