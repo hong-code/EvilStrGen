@@ -2,14 +2,14 @@ import os
 from concurrent.futures import ThreadPoolExecutor,as_completed
 import subprocess
 
-AttackString_directory = 'EvilStrGen_Ouput/'
-Regex_directory = 'EvilStrGen_Ouput/Regex/'
-Dataset_directory = 'regex_set/'
+AttackString_directory = '/home/huanghong/EvilStrGen/EvilStrGenGrep_AttackString/'
+Regex_directory = '/home/huanghong/EvilStrGen/EvilStrGenGrep_AttackString/Regex/'
+Dataset_directory = '/home/huanghong/EvilStrGen/regex_set/'
 
 
 def run(Regex_File, AttackString_Out, Engine_Type, Length):
     try:
-        command = './build/EvilStrGen ' + ("%s %s %s %s 0" % (Regex_File, AttackString_Out, Engine_Type, Length))
+        command = './EvilStrGenGrep_AttackString/EvilStrGen ' + ("%s %s %s %s 0" % (Regex_File, AttackString_Out, Engine_Type, Length))
         completed_process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = completed_process.communicate(timeout=600)
         completed_process.wait()
@@ -38,5 +38,6 @@ with ThreadPoolExecutor(max_workers=thread_num) as executor:
     for root, dirs, files in os.walk(Regex_directory):
         for file in files:
             Regex_File = root + file
-            AttackString_Out = AttackString_directory + file
+            AttackString_Out = file[0:-4]
+            # print(AttackString_Out)
             executor.submit(run, Regex_File, AttackString_Out, 1, 100000)
