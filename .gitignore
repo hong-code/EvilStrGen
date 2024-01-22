@@ -4,3 +4,6 @@ Test
 build
 .vscode
 /EvilStrGen_Output
+/EvilStrGenGrep_AttackString
+/EvilStrGen_AttackString
+/venv
