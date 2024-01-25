@@ -133,6 +133,7 @@ namespace re2 {
         std::multimap<int, int> Char_Weight(int length, State *begin);
         int BFS_DFA_Cover_Random(int length, std::string regex, int regex_id, std::string ReDoS_file);
         int BFS_DFA_Cover(int length, std::string regex, int regex_id, std::string ReDoS_file);
+        int BFS_DFA_Hy(int length, std::string regex, int regex_id, std::string ReDoS_file);
         int Mul_online_match(int length, std::string regex, int regex_id);
         std::pair<int, bool>
         HamiltonDeep(std::set<State *> S_m, std::deque<char> Rune_q, State *T, std::vector<int> input, int n);

@@ -841,7 +841,7 @@ int DFA::Hamilton_Deep_Search(int length, int restart_times, std::string regex, 
                 if (ns == DeadState) {
                     continue;
                 }
-                if (k.find(ns) == k.end() && !ns->IsMatch()){
+                if (k.find(ns) == k.end() /*&& !ns->IsMatch()*/){
                     float InstIDNum = count_InstIDNum_InState(ns, restart_times) / 100000;
                     for (int i = 0; i < ns->ninst_; i++){
                         Prog::Inst* ip = prog_->inst(ns->inst_[i]);
@@ -1149,7 +1149,144 @@ int DFA::BFS_DFA_Cover_Random(int length, std::string regex, int regex_id, std::
 //        Outfile.close();
         return 1;
         //Outfile_regex.close();
-    } else
+    } else{
+        std::string Str;
+        for (auto str1 : StrSet)
+            Str.append(str1.second);
+        std::string Str_Out;
+        while (Str_Out.length() < length)
+            Str_Out.append(Str);
+        std::cout << regex + " has redos" << std::endl;
+        std::ofstream Outfile;
+        Outfile.open(ReDoS_file);
+        std::cout << "write file" << std::endl;
+        Outfile << (Str_Out);
+    }
+        return 0;
+}
+
+int DFA::BFS_DFA_Hy(int length, std::string regex, int regex_id, std::string ReDoS_file) {
+    if (!ok())
+        return 0;
+    // Pick out start state for unanchored search
+    // at beginning of text.
+    RWLocker l(&cache_mutex_);
+    SearchParams params(StringPiece(), StringPiece(), &l);
+    params.anchored = false;
+    if (!AnalyzeSearch(&params) ||
+        params.start == NULL ||
+        params.start == DeadState)
+        return 0;
+
+    // Add start state to work queue.
+    // Note that any State* that we handle here must point into the cache,
+    // so we can simply depend on pointer-as-a-number hashing and equality.
+    std::unordered_map<State*, int> m;
+    std::deque<State*> q;
+    std::deque<char> q_attstr;
+    m.emplace(params.start, static_cast<int>(m.size()));
+    q.push_back(params.start);
+
+    // Compute the input bytes needed to cover all of the next pointers.
+    int nnext = prog_->bytemap_range();  // + 1 for kByteEndText slot
+    //std::cout << nnext << std::endl;
+    std::map<int, vector<int>> index_rune;
+    std::vector<int> input(nnext);
+    for (int c = 0; c < 256 - 1;) {
+        int b = prog_->bytemap()[c];
+        while (c < 256-1 && prog_->bytemap()[c] == b){
+            if (index_rune.find(b) == index_rune.end()){
+                vector<int> V;
+                V.emplace_back(c);
+                index_rune.insert(std::make_pair(b, V));
+            }
+            else {
+                index_rune.find(b)->second.emplace_back(c);
+            }
+            c++;
+        }
+        input[b] = c - 1;
+    }
+    std::unordered_map<State*, std::string>  StrSet;
+    unsigned long mem_counting = 0;
+    bool oom = false;
+    while (!q.empty()) {
+        State* s = q.front();
+        q.pop_front();
+        if (StrSet.find(s) == StrSet.end())
+            StrSet.insert(std::make_pair(s, ""));
+        auto ST_str = StrSet.find(s);
+        bool is_inc = false;
+        for (int i = 0; i < input.size(); i++) {
+            State* ns = RunStateOnByteUnlocked(s, input[i]);
+            if (ns == NULL) {
+                oom = true;
+                break;
+            }
+            if (ns == DeadState) {
+                continue;
+            }
+            if (m.find(ns) == m.end() && !ns->IsMatch()) {
+                mem_counting += (ST_str->second.length() + 1);
+                is_inc = true;
+                srand(m.size());
+                int index = rand() % index_rune.find(i)->second.size();
+                StrSet.insert(std::make_pair(ns,ST_str->second + char(input[i])));
+                m.emplace(ns, static_cast<int>(m.size()));
+                q.push_back(ns);
+            }
+        }
+        if (is_inc){
+            mem_counting -= (ST_str->second.length());
+            StrSet.erase(ST_str);
+        }
+        if (oom)
+            break;
+        if (mem_counting > length)
+            break;
+    }
+    if (mem_counting >= length)
+    {
+//        std::ofstream Outfile_regex;
+//        std::string filename = R"(D:\\hhcode\\PureEvilTxTGen\\backtrack_attack_txt\\regex_list\\)" + std::to_string(regex_id) + ".txt";;
+//        Outfile_regex.open(filename);
+//        Outfile_regex << regex;
+//        //Outfile_regex << "/home/huangh/PureEvilTxTGen/attack_BackTrack100000snort_text/" + std::to_string(regex_id) + ".txt";
+//        std::cout << m.size() << std::endl;
+        std::cout << regex + " has redos" << std::endl;
+        std::ofstream Outfile;
+//        filename = R"(D:\\hhcode\\PureEvilTxTGen\\backtrack_attack_txt\\)" + std::to_string(regex_id) + ".txt";
+        std::cout << "write file" << std::endl;
+
+//      write regexes
+        Outfile.open(ReDoS_file);
+//        string filename = "test.txt";
+//        Outfile.open(filename);
+        for (auto str1 : StrSet)
+            Outfile << (str1.second) ;
+        Outfile << '@';
+//        Outfile.close();
+//        std::ofstream Outfile;
+//        std::string filename = "test.txt";
+//        Outfile.open(filename);
+//        for (const auto& str1 : StrSet)
+//            Outfile << (str1.second);
+//        Outfile.close();
+        return 1;
+        //Outfile_regex.close();
+    } else{
+            std::string Str;
+            for (auto str1 : StrSet)
+            Str.append(str1.second);
+            std::string Str_Out;
+            while (Str_Out.length() < length)
+            Str_Out.append(Str);
+            std::cout << regex + " has redos" << std::endl;
+            std::ofstream Outfile;
+            Outfile.open(ReDoS_file);
+            std::cout << "write file" << std::endl;
+            Outfile << (Str_Out);
+    }
         return 0;
 }
 
@@ -1251,7 +1388,7 @@ int DFA::BFS_DFA_Cover(int length, std::string regex, int regex_id, std::string 
 //        string filename = "test.txt";
 //        Outfile.open(filename);
         for (auto str1 : StrSet)
-            Outfile << (str1.second) ;
+            Outfile << (str1.second) << '\n';
         Outfile << '@';
 //        Outfile.close();
 //        std::ofstream Outfile;

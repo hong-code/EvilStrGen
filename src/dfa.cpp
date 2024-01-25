@@ -1800,13 +1800,15 @@ namespace re2 {
             case Boost:
             case Net:{
                 bool Is_Out = false;
-                std::string sub_str(ReDoS_file.begin(), ReDoS_file.end()-4);
                 vector<string> All_Regex;
                 All_Regex = Pretreatment(regex);
                 int id = 0;
+                if (mkdir(ReDoS_file.c_str(), 0777) == -1){
+                    return false;
+                }
                 for (auto it : All_Regex){
                     id++;
-                    std::string OutFile = sub_str + "_" + to_string(id) + ".txt";
+                    std::string OutFile = ReDoS_file + '/' + to_string(id) + ".txt";
                     re2::RE2 t = re2::RE2(it);
                     if (t.Ret_regex() == nullptr)
                         continue;
@@ -1821,7 +1823,6 @@ namespace re2 {
                     return true;
                 else
                     return false;
-                break;
             }
 
             case Non_Backtracking:
@@ -1832,11 +1833,15 @@ namespace re2 {
             case NonBacktracking:
             case grep:
             case awk:{
-                if (GetDFA(Prog::kFullMatch)->BFS_DFA_Cover(PathLength, regex, regex_id, ReDoS_file) == 1){
+                std::string ReDoS_file_txt = ReDoS_file + ".txt";
+                if (GetDFA(Prog::kFullMatch)->BFS_DFA_Cover(PathLength, regex, regex_id, ReDoS_file_txt) == 1){
                     for (int i = 0; i < restart_times; i++){
                         int upper_bound = 1;
+                        std::string Partial_regex = regex;
+                        re2::RE2 t = re2::RE2(Partial_regex);
+                        re2::Prog* P = t.RetProg();
                         upper_bound++;
-                        if (GetDFA(Prog::kFullMatch)->Hamilton_Deep_Search(PathLength, upper_bound, regex, regex_id, ReDoS_file) == 1){
+                        if (P->GetDFA(Prog::kFullMatch)->Hamilton_Deep_Search(PathLength, upper_bound, regex, regex_id, ReDoS_file_txt) == 1){
                             std::cout << "generate successfully" << std::endl;
                             return true;
                         }
@@ -1844,9 +1849,8 @@ namespace re2 {
                 }
                 else{
                     bool Is_Out = false;
-//                    std::string sub_str(ReDoS_file.begin(), ReDoS_file.end()-4);
                     vector<string> All_Regex;
-                    All_Regex = Pretreatment(regex.substr(2, regex.length()-2));
+                    All_Regex = Pretreatment(regex);
                     int id = 0;
                     if (mkdir(ReDoS_file.c_str(), 0777) == -1){
                         return false;
@@ -1868,14 +1872,16 @@ namespace re2 {
                         return true;
                     else
                         return false;
-                    break;
                 }
                 return false;
+            }
+            case Hyperscan:{
+                std::string ReDoS_file_txt = ReDoS_file + ".txt";
+                GetDFA(Prog::kFullMatch)->BFS_DFA_Hy(PathLength, regex, regex_id, ReDoS_file_txt);
                 break;
             }
             default:
                 return false;
-                break;
         }
     }
 
