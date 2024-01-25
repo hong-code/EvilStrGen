@@ -1,10 +1,6 @@
 cmake_minimum_required(VERSION 3.9.0)
 project(EvilStrGen)
-project(evil_text_make)
 set(CMAKE_CXX_STANDARD 17)
-
-aux_source_directory(. DIR_re2_clion)
-
 
 include_directories(${PROJECT_SOURCE_DIR}/util ${PROJECT_SOURCE_DIR})
 include_directories(${PROJECT_SOURCE_DIR}/src ${PROJECT_SOURCE_DIR})
