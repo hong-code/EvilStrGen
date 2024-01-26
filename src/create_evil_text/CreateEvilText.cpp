@@ -1306,6 +1306,7 @@ int DFA::BFS_DFA_Cover(int length, std::string regex, int regex_id, std::string 
     // Add start state to work queue.
     // Note that any State* that we handle here must point into the cache,
     // so we can simply depend on pointer-as-a-number hashing and equality.
+    
     std::unordered_map<State*, int> m;
     std::deque<State*> q;
     std::deque<char> q_attstr;
