@@ -66,6 +66,7 @@
 
 namespace re2 {
 
+
 // Controls whether the DFA should bail out early if the NFA would be faster.
     static bool dfa_should_bail_when_slow = true;
 
