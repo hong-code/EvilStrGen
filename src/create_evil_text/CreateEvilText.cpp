@@ -1388,7 +1388,7 @@ int DFA::BFS_DFA_Cover(int length, std::string regex, int regex_id, std::string 
 //        string filename = "test.txt";
 //        Outfile.open(filename);
         for (auto str1 : StrSet)
-            Outfile << (str1.second) << '\n';
+            Outfile << (str1.second);
         Outfile << '@';
 //        Outfile.close();
 //        std::ofstream Outfile;
