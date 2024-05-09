@@ -11,9 +11,28 @@
 
 ## Introduction
 
-Meta-learning enables rapid generalization to new tasks by learning knowledge from various tasks. It is intuitively assumed that as the training progresses, a model will acquire richer knowledge, leading to better generalization performance. However, our experiments reveal an unexpected result: there is negative knowledge transfer between tasks, affecting generalization performance. To explain this phenomenon, we conduct Structural Causal Models (SCMs) for causal analysis. Our investigation uncovers the presence of spurious correlations between task-specific causal factors and labels in meta-learning. Furthermore, the confounding factors differ across different batches. We refer to these confounding factors as ``Task Confounders". Based on these findings, we propose a plug-and-play Meta-learning Causal Representation Learner (MetaCRL) to eliminate task confounders. It encodes decoupled generating factors from multiple tasks and utilizes an invariant-based bi-level optimization mechanism to ensure their causality for meta-learning.
+We walk through the procedure of ReDoS detection in EVILSTRGEN. The input of EVILSTRGEN includes the regex, the expec-ted attack string length, the matching function and the engine.
 
-Brief overview of the meta-learning process with MetaCRL:
+
+The tool first preprocesses the input, e.g. for the functions using the mechanic of unanchored partial matching, a Σ∗ is prepe-nded to the input regex as in [60], etc., in step 1 of Figure below. Next, the tool calls the k-SIMPLE STRING solver INC_DET′ to generate ReDoS attack strings bytewise with incremental determinisation based on the DFA in the corresponding engine. 
+
+The search for k-simple strings uses two complete and an incomplete strategy to optimize its efficacy. Step 2, the first strate-gy exploits the power of nondeterminism in automata theory to select the symbols that results in the largest DFA states in at-tack strings. The second strategy, i.e. step 3,mimics the Perl-style disambiguation rules to select the DFA
+state with the highe-st matching priority. 
+
+When a considerable amount of conflicts (see §5.2) is detected, step 4 uses an incomplete non-chronological backtracking to prune the state space.
+
+When the solver terminates, it outputs a k-simple string or a currently longest simple string in step 5. 
+
+Next in step 6, considering matching function, anchors and the size of the
+simple string, EVILSTRGEN decides to go to the va-lidation,
+or to step 7 to search repeatedly to obtain a candidate attack
+string of proper length by appending outputs to the f-ormer
+results. Finally in step 8, a validator is used to verify the
+string according to the criteria for ReDoS on corresponding
+e-ngines, and either reports the vulnerability with the effective
+attack string or claims the regex safe.
+
+Brief overview of EvilStrGen:
 
 ![OVERVIEW](https://github.com/hong-code/EvilStrGen/blob/main/assets/mechanics.png)
 
@@ -27,27 +46,37 @@ Brief overview of the meta-learning process with MetaCRL:
 
 ## Create Environment
 
-For easier use and to avoid any conflicts with existing Python setup, it is recommended to use [`virtualenv`](https://docs.python-guide.org/dev/virtualenvs/) to work in a virtual environment. Now, let's start:
+Now, let's start:
 
-**Step 1:** Install [`virtualenv`](https://docs.python-guide.org/dev/virtualenvs/)
+**Step 1:** Install [`gcc`][`g++`][`cmake`][`make`]
 
 ```bash
-pip install --upgrade virtualenv
+sudo apt install build-essential 
+sudo apt install cmake
 ```
 
-or using `conda create`.
 
-**Step 2:** Create a virtual environment, activate it:
+**Step 2:** Install [`python`] :
 
 ```bash
-virtualenv venv
-source venv/bin/activate
+apt install python3.4
 ```
 
-**Step 3:** Install the requirements in [`requirements.txt`](requirements.txt).
+
+## How to run
+```bash
+cd EvilStrGen // Enter the root directory of the project
+mkdir build && cd build // create build directory
+cmake .. //load cmakelist file
+make // compile into .exe file
+./EvilStrGen [Regex] [OutputFile] [EngineType] [Attack String Length]
+```
+
+## Using multi-threaded Python scripts
+
 
 ```bash
-pip install -r requirements.txt
+python Batch_Processing.py
 ```
 
 
@@ -60,14 +89,15 @@ For 5-way 1-shot exp., it allocates nearly 6GB GPU memory.
 2. for image split, extract it like:
 
 ```shell
-miniimagenet/
+EvilStrGen/
+├── regex_set #dataset
 ├── images
 	├── n0210891500001298.jpg  
 	├── n0287152500001298.jpg 
 	...
 ├── test.csv
-├── val.csv
-└── train.csv
+├── Batch_Processing.py
+└── EvilStrGen.cpp  #main code
 
 ```
 
