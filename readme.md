@@ -1,29 +1,115 @@
 # EvilStrGen
-an Effective Method of ReDoS Detection for Non-backtracking Marchers
 
-Here we introduce how to set up a runtime environment and how to use the **tool**
-## runtime environment
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) 
+![Static Badge](https://img.shields.io/badge/Security_ReDoS-blue)
+![Static Badge](https://img.shields.io/badge/Non_backtracking_RegexEngine-green)
+![Static Badge](https://img.shields.io/badge/to_be_continue-orange)
+![Stars](https://img.shields.io/github/stars/WangJingyao07/MetaCRL)
 
-### Operating Systerm
-Ubuntu
+🌈 The implementation of EvilStrGen, described in USENIX Security 2024 "Towards an Effective Method of ReDoS Detection for Non-backtracking Engines".
 
-### Set up
-```c++
-sudo apt install build-essential  // install gcc, g++ and make
-sudo apt install cmake  // install cmake
+
+## Introduction
+
+Meta-learning enables rapid generalization to new tasks by learning knowledge from various tasks. It is intuitively assumed that as the training progresses, a model will acquire richer knowledge, leading to better generalization performance. However, our experiments reveal an unexpected result: there is negative knowledge transfer between tasks, affecting generalization performance. To explain this phenomenon, we conduct Structural Causal Models (SCMs) for causal analysis. Our investigation uncovers the presence of spurious correlations between task-specific causal factors and labels in meta-learning. Furthermore, the confounding factors differ across different batches. We refer to these confounding factors as ``Task Confounders". Based on these findings, we propose a plug-and-play Meta-learning Causal Representation Learner (MetaCRL) to eliminate task confounders. It encodes decoupled generating factors from multiple tasks and utilizes an invariant-based bi-level optimization mechanism to ensure their causality for meta-learning.
+
+Brief overview of the meta-learning process with MetaCRL:
+
+![OVERVIEW](https://github.com/hong-code/EvilStrGen/blob/main/assets/mechanics.png)
+
+
+## Platform
+- ubuntu20.04
+
+- python: 3.x
+  
+- c++
+
+## Create Environment
+
+For easier use and to avoid any conflicts with existing Python setup, it is recommended to use [`virtualenv`](https://docs.python-guide.org/dev/virtualenvs/) to work in a virtual environment. Now, let's start:
+
+**Step 1:** Install [`virtualenv`](https://docs.python-guide.org/dev/virtualenvs/)
+
+```bash
+pip install --upgrade virtualenv
 ```
 
-### How to run 
-```c++
-cd EvilStrGen // Enter the root directory of the project
-mkdir build && cd build // create build directory
-cmake .. //load cmakelist file
-make // compile into .exe file
-./EvilStrGen [Regex] [OutputFile] [EngineType] [Attack String Length] 
+or using `conda create`.
+
+**Step 2:** Create a virtual environment, activate it:
+
+```bash
+virtualenv venv
+source venv/bin/activate
 ```
 
-### Batch Processing
-```c++
-cd EvilStrGen
-python3 Batch_Processing.py [RegexDataset] [OutputDirectory]
+**Step 3:** Install the requirements in [`requirements.txt`](requirements.txt).
+
+```bash
+pip install -r requirements.txt
 ```
+
+
+## Data Availability
+
+For 5-way 1-shot exp., it allocates nearly 6GB GPU memory.
+
+1. download `MiniImagenet` dataset from [here](https://github.com/dragen1860/LearningToCompare-Pytorch/issues/4), the splitted file: `train/val/test.csv` are provided in `data/split`
+   
+2. for image split, extract it like:
+
+```shell
+miniimagenet/
+├── images
+	├── n0210891500001298.jpg  
+	├── n0287152500001298.jpg 
+	...
+├── test.csv
+├── val.csv
+└── train.csv
+
+```
+
+`data/data_generator` provides the python file for data generator.
+
+3. modify the `path` in `example.py`:
+
+```python
+        mini = MiniImagenet('miniimagenet/', mode='train', n_way=args.n_way, k_shot=args.k_spt,
+                    k_query=args.k_qry,
+                    batchsz=10000, resize=args.imgsz)
+		...
+        mini_test = MiniImagenet('miniimagenet/', mode='test', n_way=args.n_way, k_shot=args.k_spt,
+                    k_query=args.k_qry,
+                    batchsz=100, resize=args.imgsz)
+```
+
+to your actual data path.
+
+## Run
+
+We provide the example for training on miniImagenet:
+
+```
+python example.py
+```
+
+more examples will be provided after the paper being published.
+
+### Cite
+
+If you find our work and codes useful, please consider citing our paper and star our repository (🥰🎉Thanks!!!):
+
+```
+@misc{wang2024hacking,
+      title={Hacking Task Confounder in Meta-Learning}, 
+      author={Jingyao Wang and Yi Ren and Zeen Song and Jianqi Zhang and Changwen Zheng and Wenwen Qiang},
+      year={2024},
+      eprint={2312.05771},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
+```
+
+(arXiv version, the final version will be updated after the paper is published.)
