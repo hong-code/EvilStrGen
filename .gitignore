@@ -3,7 +3,5 @@ Test
 .idea
 build
 .vscode
-/EvilStrGen_Output
-/EvilStrGenGrep_AttackString
 /venv
 regex_set
