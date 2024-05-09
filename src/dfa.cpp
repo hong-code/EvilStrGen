@@ -1879,7 +1879,7 @@ namespace re2 {
             case Hyperscan:{
                 std::string ReDoS_file_txt = ReDoS_file + ".txt";
                 GetDFA(Prog::kFullMatch)->BFS_DFA_Hy(PathLength, regex, regex_id, ReDoS_file_txt);
-                break;
+                return true;
             }
             default:
                 return false;
