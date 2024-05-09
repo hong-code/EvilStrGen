@@ -5,6 +5,5 @@ build
 .vscode
 /EvilStrGen_Output
 /EvilStrGenGrep_AttackString
-/EvilStrGen_AttackString
 /venv
-/regex_set
+regex_set
