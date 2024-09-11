@@ -132,14 +132,7 @@ more examples will be provided after the paper being published.
 If you find our work and codes useful, please consider citing our paper and star our repository (🥰🎉Thanks!!!):
 
 ```
-@misc{wang2024hacking,
-      title={Hacking Task Confounder in Meta-Learning}, 
-      author={Jingyao Wang and Yi Ren and Zeen Song and Jianqi Zhang and Changwen Zheng and Wenwen Qiang},
-      year={2024},
-      eprint={2312.05771},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG}
-}
+
 ```
 
 (arXiv version, the final version will be updated after the paper is published.)
