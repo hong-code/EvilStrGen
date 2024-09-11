@@ -132,7 +132,18 @@ more examples will be provided after the paper being published.
 If you find our work and codes useful, please consider citing our paper and star our repository (🥰🎉Thanks!!!):
 
 ```
-
+@inproceedings {299724,
+author = {Weihao Su and Hong Huang and Rongchen Li and Haiming Chen and Tingjian Ge},
+title = {Towards an Effective Method of {ReDoS} Detection for Non-backtracking Engines},
+booktitle = {33rd USENIX Security Symposium (USENIX Security 24)},
+year = {2024},
+isbn = {978-1-939133-44-1},
+address = {Philadelphia, PA},
+pages = {271--288},
+url = {https://www.usenix.org/conference/usenixsecurity24/presentation/su-weihao},
+publisher = {USENIX Association},
+month = aug
+}
 ```
 
 (arXiv version, the final version will be updated after the paper is published.)
