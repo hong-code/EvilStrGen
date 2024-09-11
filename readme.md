@@ -146,4 +146,3 @@ month = aug
 }
 ```
 
-(arXiv version, the final version will be updated after the paper is published.)
