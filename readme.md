@@ -4,7 +4,6 @@
 ![Static Badge](https://img.shields.io/badge/Security_ReDoS-blue)
 ![Static Badge](https://img.shields.io/badge/Non_backtracking_RegexEngine-green)
 ![Static Badge](https://img.shields.io/badge/to_be_continue-orange)
-![Stars](https://img.shields.io/github/stars/WangJingyao07/MetaCRL)
 
 🌈 The implementation of EvilStrGen, described in USENIX Security 2024 "Towards an Effective Method of ReDoS Detection for Non-backtracking Engines".
 
@@ -101,15 +100,6 @@ EvilStrGen/
 
 ```
 
-## Run
-
-We provide the example for training on miniImagenet:
-
-```
-python example.py
-```
-
-more examples will be provided after the paper being published.
 
 ### Cite
 
